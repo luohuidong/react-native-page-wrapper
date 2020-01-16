@@ -1,0 +1,43 @@
+{
+  "name": "@luohuidong/react-native-page-wrapper",
+  "version": "0.0.1",
+  "description": "A React Native page wrapper component.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luohuidong/react-native-page-wrapper.git"
+  },
+  "keywords": [
+    "react-native",
+    "page wrapper"
+  ],
+  "author": {
+    "name": "luohuidong",
+    "email": "luohuidong01@126.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luohuidong/react-native-page-wrapper/issues",
+    "email": "luohuidong01@126.com"
+  },
+  "homepage": "https://github.com/luohuidong/react-native-page-wrapper#readme",
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-native": "^0.61.5"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-native": "^0.60.30",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.0",
+    "react": "^16.12.0",
+    "react-native": "^0.61.5",
+    "typescript": "^3.7.4"
+  }
+}
