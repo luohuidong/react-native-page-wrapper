@@ -1,10 +1,12 @@
 import React from 'react'
 import { View, StyleSheet, StatusBar } from 'react-native'
 
+import { useGetPortraitState } from './useGetPortraitState'
+
 const styles = StyleSheet.create({
   containerWithStatusBar: {
     flex: 1,
-    marginTop: StatusBar.currentHeight,
+    paddingTop: StatusBar.currentHeight,
   },
   conntainerWithoutStatusBar: {
     flex: 1
@@ -13,18 +15,32 @@ const styles = StyleSheet.create({
 
 interface Props {
   isHiddenStatusBar: boolean;
+  isLandScapeAutoHiddenStatusBar: boolean;
   children: React.ReactNode;
-  isPortrait: boolean;
 }
 
-export default function AndroidContainer(props: Props) {
-  const { isPortrait } = props
+export default function AndroidContainer(props: Props): JSX.Element {
+  const isPortrait = useGetPortraitState()
 
-  const style = props.isHiddenStatusBar || !isPortrait
-    ? styles.conntainerWithoutStatusBar
-    : styles.containerWithStatusBar
+  let isHiddenStatusBar = props.isHiddenStatusBar
+
+  // 在横屏的时候，如果 isLandScapeAutoHiddenStatusBar 设置为 true，则自动隐藏 status bar
+  if (!isPortrait && props.isLandScapeAutoHiddenStatusBar) {
+    isHiddenStatusBar = true
+  }
+
+  const style = isHiddenStatusBar ? styles.conntainerWithoutStatusBar : styles.containerWithStatusBar
 
   return (
-    <View style={style}>{props.children}</View>
+    <>
+      <StatusBar translucent={true} hidden={isHiddenStatusBar} barStyle='dark-content' />
+      <View style={style}>{props.children}</View>
+    </>
+
   )
+}
+
+AndroidContainer.defaultProps = {
+  isHiddenStatusBar: false,
+  isLandScapeAutoHiddenStatusBar: false
 }

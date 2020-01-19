@@ -20,7 +20,7 @@ export function useGetPortraitState(): boolean {
     return portraitState
   }
 
-  const [portraitState, setPortraitState] = useState<boolean>(() => {
+  const [portraitState, setPortraitState] = useState(() => {
     const { height, width } = Dimensions.get('window')
     return isPortrait(height, width)
   })
