@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatusBar, Platform } from 'react-native'
+import { Platform } from 'react-native'
 
 import AndroidContainer from './AndroidContainer'
 import IosContainer from './IosContainer'
