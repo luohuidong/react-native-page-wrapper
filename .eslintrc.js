@@ -30,5 +30,5 @@ module.exports = {
     quotes: ["error", "single"],
     semi: ["error", "never"]
   },
-  ignorePatterns: ["example/"],
+  ignorePatterns: ["example/", "watchFile.js"],
 };

@@ -4,7 +4,8 @@
   "description": "A React Native page wrapper component.",
   "main": "./src/index.tsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watchFile": "nodemon watchFile.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "@typescript-eslint/parser": "^2.16.0",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.18.0",
+    "nodemon": "^2.0.2",
     "react": "^16.9.0",
     "react-native": "^0.61.5",
     "typescript": "^3.7.4"
