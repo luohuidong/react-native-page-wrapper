@@ -1,30 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, StyleSheet, StatusBar } from 'react-native'
 
+import { PageWrapperContext } from './context'
+import IosContainerFullScreenMode from './IosContainerFullScreenMode'
+import IosContainerNormalMode from './IosContainerNormalMode'
+
 const styles = StyleSheet.create({
-  containerWithStatusBar: {
+  container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight,
-  },
-  conntainerWithoutStatusBar: {
-    flex: 1
+    flexDirection: 'column',
   },
 })
 
-interface Props {
-  isHiddenStatusBar: boolean;
-  children: React.ReactNode;
-  isPortrait: boolean;
-}
-
-export default function AndroidContainer(props: Props): JSX.Element {
-  const { isPortrait } = props
-
-  const style = props.isHiddenStatusBar || !isPortrait
-    ? styles.conntainerWithoutStatusBar
-    : styles.containerWithStatusBar
+export default function IOSContainer(): JSX.Element {
+  const {
+    isFullScreenMode, isHiddenStatusBar, reactNativeStatusBarProps
+  } = useContext(PageWrapperContext)
 
   return (
-    <View style={style}>{props.children}</View>
+    <View style={styles.container}>
+      <StatusBar
+        barStyle='dark-content'
+        hidden={isHiddenStatusBar}
+        {...reactNativeStatusBarProps}
+      />
+      { isFullScreenMode ? <IosContainerFullScreenMode /> : <IosContainerNormalMode /> }
+    </View>
   )
 }
