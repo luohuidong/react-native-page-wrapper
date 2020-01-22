@@ -1,34 +1,44 @@
 import React, { useState } from 'react'
-import { Text, Button, View } from 'react-native'
+import { Text, Button, View, StyleSheet } from 'react-native'
 import { NavigationStackProp } from 'react-navigation-stack';
 
 import { PageWrapper, Header } from '../components/'
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: 'purple',
+    alignItems: 'center'
+  }
+})
 
 interface Props {
   navigation: NavigationStackProp
 }
 
-export default function HomeScreen (props: Props) {
+export default function HomeScreen(props: Props) {
   const [hidden, setHidden] = useState(false)
 
   return (
     <PageWrapper
       isHiddenStatusBar={hidden}
-      header={<Header />}
       statusBarColor='blue'
       isFullScreenMode={true}
       reactNativeStatusBarProps={{
-        barStyle: "light-content"
+        barStyle: "light-content",
       }}
+      header={<Header />}
     >
-      <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', backgroundColor: 'purple' }}>
-        <Text>Open up App.tsx to start working on your app!</Text>
+      <View style={styles.container}>
+        <Text>FullScreenMode</Text>
         <Button
           title="Hide status bar"
           onPress={() => setHidden(!hidden)}
         />
         <Button
-          title="Go to detail page"
+          title="Go to normal mode page"
           onPress={() => props.navigation.navigate('Detail')}
         />
       </View>

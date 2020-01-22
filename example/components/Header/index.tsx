@@ -17,7 +17,7 @@ interface Props {
 export default function Header(props: Props) {
   return (
     <View style={[styles.container, props.style]}>
-      <Text>我是 Header</Text>
+      <Text>Header</Text>
     </View>
   )
 }

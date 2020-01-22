@@ -9,9 +9,12 @@ interface Props {
 }
 
 export default function DetailScreen (props: Props) {
+  const [hidden, setHidden] = useState(false)
+
   return (
     <PageWrapper
       isFullScreenMode={false}
+      isHiddenStatusBar={hidden}
       header={<Header style={{ backgroundColor: 'green' }} />}
       statusBarColor='blue'
       reactNativeStatusBarProps = {{
@@ -24,7 +27,11 @@ export default function DetailScreen (props: Props) {
       <View style={{
         flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'orange'
       }}>
-        <Text>Detail page</Text>
+        <Text>NormalScreenMode</Text>
+        <Button
+          title="Hide status bar"
+          onPress={() => setHidden(!hidden)}
+        />
         <Button
           title="Go Back"
           onPress={() => props.navigation.goBack()}
