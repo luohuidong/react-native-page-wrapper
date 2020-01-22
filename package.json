@@ -2,7 +2,7 @@
   "name": "@luohuidong/react-native-page-wrapper",
   "version": "0.0.1",
   "description": "A React Native page wrapper component.",
-  "main": "./src/index.tsx",
+  "main": "./dist/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watchFile": "nodemon watchFile.js"
