@@ -10,7 +10,7 @@ const isIos = Platform.OS === 'ios'
 interface Props {
   children: React.ReactNode;
   isHiddenStatusBar: boolean; // 是否隐藏
-  isLandScapeAutoHiddenStatusBar?: boolean; // 仅对 Android 有效
+  isLandScapeAutoHiddenStatusBar?: boolean; // 横屏时自动隐藏状态栏，仅对 Android 有效
   header: React.ReactNode; // 页面头部
   statusBarColor?: string; // 状态栏颜色，仅对 IOS 全屏模式下有效
   isFullScreenMode: boolean; // 此模式页面内容将置于状态栏和头部之下渲染
@@ -51,14 +51,7 @@ export default function PageWrapper({
   return (
     <>
       <PageWrapperContext.Provider value={value}>
-        {
-          isIos
-            ? <IosContainer />
-            : <AndroidContainer
-              isHiddenStatusBar={isHiddenStatusBar}
-              isLandScapeAutoHiddenStatusBar={isLandScapeAutoHiddenStatusBar}
-            >{children}</AndroidContainer>
-        }
+        { isIos ? <IosContainer /> : <AndroidContainer /> }
       </PageWrapperContext.Provider>
     </>
   )

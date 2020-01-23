@@ -30,6 +30,7 @@ export default function HomeScreen(props: Props) {
         barStyle: "light-content",
       }}
       header={<Header />}
+      isLandScapeAutoHiddenStatusBar={true}
     >
       <View style={styles.container}>
         <Text>FullScreenMode</Text>

@@ -26,12 +26,12 @@ export default function IosFullScreenModeContainer() {
 
   return (
     <>
-      <View style={{ flex: 1 }}>
-        <View style={styles.childrenContainer}>{children}</View>
+      <View style={styles.childrenContainer}>
+        {children}
       </View>
 
       {
-        // 当处于横屏状态，并且没有隐藏状态栏的时候，头部在
+        // 当处于横屏状态，并且没有隐藏状态栏的时候，显示的头部
         !isPortraitState && !isHiddenStatusBar ? (
           <View style={{ position: 'absolute', width: '100%' }}>
             {header}
@@ -40,6 +40,7 @@ export default function IosFullScreenModeContainer() {
       }
 
       {
+        // 当处于横屏状态，并且没有隐藏状态栏的时候，显示的头部
         isPortraitState && !isHiddenStatusBar ? (
           <SafeAreaView style={[styles.saveAreaContainer, { backgroundColor: statusBarColor }]}>
             {header}

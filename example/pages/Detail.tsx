@@ -17,6 +17,7 @@ export default function DetailScreen (props: Props) {
       isHiddenStatusBar={hidden}
       header={<Header style={{ backgroundColor: 'green' }} />}
       statusBarColor='blue'
+      isLandScapeAutoHiddenStatusBar={true}
       reactNativeStatusBarProps = {{
         barStyle: "light-content"
       }}
