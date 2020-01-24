@@ -19,13 +19,13 @@ interface Props {
 }
 
 export default function HomeScreen(props: Props) {
-  const [hidden, setHidden] = useState(false)
+  const [isFullScreen, setFullScreen] = useState(false)
 
   return (
     <PageWrapper
-      isHiddenStatusBar={hidden}
+      isFullScreen={isFullScreen}
       statusBarColor='blue'
-      isFullScreenMode={true}
+      isFullScreenPageMode={true}
       reactNativeStatusBarProps={{
         barStyle: "light-content",
       }}
@@ -35,8 +35,8 @@ export default function HomeScreen(props: Props) {
       <View style={styles.container}>
         <Text>FullScreenMode</Text>
         <Button
-          title="Hide status bar"
-          onPress={() => setHidden(!hidden)}
+          title="Toggle full screen"
+          onPress={() => setFullScreen(!isFullScreen)}
         />
         <Button
           title="Go to normal mode page"
