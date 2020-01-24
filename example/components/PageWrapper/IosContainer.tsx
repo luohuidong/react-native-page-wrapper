@@ -14,17 +14,17 @@ const styles = StyleSheet.create({
 
 export default function IOSContainer(): JSX.Element {
   const {
-    isFullScreenMode, isHiddenStatusBar, reactNativeStatusBarProps
+    isFullScreenPageMode, isFullScreen, reactNativeStatusBarProps
   } = useContext(PageWrapperContext)
 
   return (
     <View style={styles.container}>
       <StatusBar
         barStyle='dark-content'
-        hidden={isHiddenStatusBar}
+        hidden={isFullScreen}
         {...reactNativeStatusBarProps}
       />
-      { isFullScreenMode ? <IosContainerFullScreenMode /> : <IosContainerNormalMode /> }
+      { isFullScreenPageMode ? <IosContainerFullScreenMode /> : <IosContainerNormalMode /> }
     </View>
   )
 }

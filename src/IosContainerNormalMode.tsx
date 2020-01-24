@@ -11,11 +11,13 @@ const styles = StyleSheet.create({
 
 export default function IosContainerNormalMode() {
   const {
-    children, header, safeAreaViewStyle
+    children, header, safeAreaViewStyle, statusBarColor
   } = useContext(PageWrapperContext)
 
   return (
-    <SafeAreaView style={[styles.container, safeAreaViewStyle]}>
+    <SafeAreaView
+      style={[styles.container, { backgroundColor: statusBarColor}, safeAreaViewStyle]}
+    >
       {header}
       {children}
     </SafeAreaView>

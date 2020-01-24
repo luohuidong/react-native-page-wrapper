@@ -20,7 +20,7 @@ export default function IosFullScreenModeContainer() {
   const isPortraitState = useGetPortraitState()
   const {
     children, header,
-    isHiddenStatusBar,
+    isFullScreen,
     statusBarColor
   } = useContext(PageWrapperContext)
 
@@ -32,7 +32,7 @@ export default function IosFullScreenModeContainer() {
 
       {
         // 当处于横屏状态，并且没有隐藏状态栏的时候，显示的头部
-        !isPortraitState && !isHiddenStatusBar ? (
+        !isPortraitState && !isFullScreen ? (
           <View style={{ position: 'absolute', width: '100%' }}>
             {header}
           </View>
@@ -41,7 +41,7 @@ export default function IosFullScreenModeContainer() {
 
       {
         // 当处于横屏状态，并且没有隐藏状态栏的时候，显示的头部
-        isPortraitState && !isHiddenStatusBar ? (
+        isPortraitState && !isFullScreen ? (
           <SafeAreaView style={[styles.saveAreaContainer, { backgroundColor: statusBarColor }]}>
             {header}
           </SafeAreaView>

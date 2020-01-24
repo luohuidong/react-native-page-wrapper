@@ -5,12 +5,12 @@ import AndroidContainerFullScreenMode from './AndroidContainerFullScreenMode'
 import AndroidContainerNormalMode from  './AndroidContainerNormalMode'
 
 export default function AndroidContainer(): JSX.Element {
-  const { isFullScreenMode } = useContext(PageWrapperContext)
+  const { isFullScreenPageMode } = useContext(PageWrapperContext)
 
   return (
     <>
       {
-        isFullScreenMode
+        isFullScreenPageMode
           ? <AndroidContainerFullScreenMode />
           : <AndroidContainerNormalMode />
       }
