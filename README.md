@@ -29,6 +29,73 @@ PageWrapper 分为两种模式，一直是普通页面模式，另一种是全�
 
 由于页面头部是通过 `header` props 传入的，因此在使用全屏页面模式的时候，当将全屏属性设置为 `true`  的时候，将自动隐藏状态栏以及头部，从而达到页面内容全屏的效果。
 
+## 安装
+
+使用 npm 安装
+
+```bash
+npm i @luohuidong/react-native-page-wrapper
+```
+
+或者使用 yarn 安装
+
+```bash
+yarn add @luohuidong/react-native-page-wrapper
+```
+
+## 使用
+
+```tsx
+import React, { useState } from 'react'
+import { Text, Button, View, StyleSheet } from 'react-native'
+import { NavigationStackProp } from 'react-navigation-stack';
+
+import { PageWrapper, Header } from '../components/'
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: 'purple',
+    alignItems: 'center'
+  }
+})
+
+interface Props {
+  navigation: NavigationStackProp
+}
+
+export default function HomeScreen(props: Props) {
+  const [isFullScreen, setFullScreen] = useState(false)
+
+  return (
+    <PageWrapper
+      isFullScreen={isFullScreen}
+      statusBarColor='blue'
+      isFullScreenPageMode={true}
+      reactNativeStatusBarProps={{
+        barStyle: "light-content",
+      }}
+      header={<Header />}
+      isLandScapeAutoHiddenStatusBar={true}
+    >
+      <View style={styles.container}>
+        <Text>FullScreenMode</Text>
+        <Button
+          title="Toggle full screen"
+          onPress={() => setFullScreen(!isFullScreen)}
+        />
+        <Button
+          title="Go to normal mode page"
+          onPress={() => props.navigation.navigate('Detail')}
+        />
+      </View>
+    </PageWrapper>
+  );
+}
+```
+
 ## Props
 
 ### isFullScreenPageMode
