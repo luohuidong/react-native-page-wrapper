@@ -1,6 +1,6 @@
 {
   "name": "@luohuidong/react-native-page-wrapper",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A React Native page wrapper component.",
   "main": "./dist/index.ts",
   "scripts": {
