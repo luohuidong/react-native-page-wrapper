@@ -1,5 +1,15 @@
 # ReactNativePageWrapper
 
+![npm peer dependency version (scoped)](https://img.shields.io/npm/dependency-version/@luohuidong/react-native-page-wrapper/dev/react)
+![npm peer dependency version (scoped)](https://img.shields.io/npm/dependency-version/@luohuidong/react-native-page-wrapper/dev/react-native)
+![Version](https://img.shields.io/npm/v/@luohuidong/react-native-page-wrapper)
+![License](https://img.shields.io/github/license/luohuidong/react-native-page-wrapper)
+![Downloads](https://img.shields.io/npm/dw/@luohuidong/react-native-page-wrapper)
+![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@luohuidong/react-native-page-wrapper)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/luohuidong/react-native-page-wrapper)
+![GitHub last commit](https://img.shields.io/github/last-commit/luohuidong/react-native-page-wrapper)
+
+
 该 React Native 组件用于解决 IOS 刘海屏以及 Android 异形屏适配问题。
 
 - React 版本在 16.9.0 以上
