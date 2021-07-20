@@ -28,7 +28,7 @@
   "homepage": "https://github.com/luohuidong/react-native-page-wrapper#readme",
   "peerDependencies": {
     "react": "^16.9.0",
-    "react-native": "^0.61.5"
+    "react-native": "^0.62.3"
   },
   "devDependencies": {
     "@types/react": "^16.9.17",
@@ -39,7 +39,7 @@
     "eslint-plugin-react": "^7.18.0",
     "nodemon": "^2.0.2",
     "react": "^16.9.0",
-    "react-native": "^0.61.5",
+    "react-native": "^0.62.3",
     "typescript": "^3.7.4"
   }
 }
